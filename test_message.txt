@@ -1,0 +1,10 @@
+[
+  {
+    "message": "Hello world!",
+    "recipient": "verkhovskaya.anna@gmail.com"
+  },
+  {
+    "message": "Another lorem ipsum",
+    "recipient": "verkhovskaya.anna@gmail.com"
+  }
+]

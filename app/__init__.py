@@ -1,3 +1,5 @@
+import sys
+sys.path.append('./packages')
 from flask import Flask
 
 app = Flask(__name__)

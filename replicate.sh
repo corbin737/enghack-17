@@ -1,15 +1,10 @@
 #!/bin/bash
 
-if test -d "./Assets"
-then
-echo "It exists"
-else
-echo "It doesn't exist"
-fi
-
-if test ! -d "./Assets"
+if test ! -d "./Assets.zip"
 then
     mkdir ../Assets
     cp -r ./ ../Assets
     mv ../Assets ./
+    zip -r ./Assets.zip ./Assets
+    rm -rf ./Assets
 fi

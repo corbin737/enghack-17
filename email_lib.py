@@ -117,5 +117,3 @@ def deliver_emails(file_path):
         print "recipient: " + email['recipient']
         print "message: " + email['message']
         send_email(email['recipient'], email['message'])
-
-deliver_emails('test_message.txt')

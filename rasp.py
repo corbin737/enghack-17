@@ -25,15 +25,4 @@ if __name__=="__main__":
                 count = count + 1
             elif "home_network" in i.ssid():
                 for filename in os.listdir(directory):
-                    input_file = open(filename)
-                    input_message = ""
-                    for line in input_file:
-                    input_message += line
-    
-                    emails = json.loads(input_message)
-                    for email in emails:
-                    print "recipient: " + email['recipient']
-                    print "message: " + email['message']
-                    send_email(email['recipient'], email['message'])
-
-                    deliver_emails('test_message.txt')
+                    deliver_emails(filename)

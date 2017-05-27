@@ -3,6 +3,7 @@ import requests
 import email_lib
 import json
 import sys
+import os
 
 text = "Stuff about safety and whatever else you want to say"
 
@@ -24,5 +25,8 @@ if __name__=="__main__":
                 file.close()
                 count = count + 1
             elif "home_network" in i.ssid():
-                for filename in os.listdir(directory):
-                    deliver_emails(filename)
+                for filename in os.listdir('./'):
+                    if '.txt' in filename:
+                        email_lib.deliver_emails(filename)
+                        os.remove(filename)
+                        print('success')

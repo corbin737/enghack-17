@@ -1,7 +1,18 @@
 {% extends "base.html" %}
 {% block content %}
-    <h1>Hi, {{ user.nickname }}!</h1>
+    <div class="jumbotron">
+        <h1>Hello, world!</h1>
+        <p>...</p>
+        <p><a class="btn btn-primary btn-lg" href="{{ url_for('download') }}" role="button">Download</a></p>
+    </div>
+
+    <div class="page-header">
+        <h1>Broadcasts</h1>
+    </div>
     {% for post in messages %}
-    <div><p>To {{ post.recipient }}: <b>{{ post.message }}</b></p></div>
+    <div class="alert alert-info" role="alert">
+        {{ post.message }}
+    </div>
     {% endfor %}
+    <a href="{{ url_for('download') }}">Download</a>
 {% endblock %}

@@ -1,4 +1,4 @@
-from flask import render_template, flash, redirect, jsonify, send_file
+from flask import render_template, flash, redirect, jsonify, send_file, request
 from app import app, db, models
 from .forms import MessageForm
 
@@ -37,6 +37,12 @@ def get_data():
         {'recipient': m.recipient, 'message': m.message}
         for m in messages
     ])
+
+@app.route('/post_data', methods=['POST'])
+def post_data():
+    res = request.data
+    data = json.loads(res)
+    return redirect('/')
 
 @app.route('/download')
 def download():

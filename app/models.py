@@ -8,3 +8,10 @@ class Message(db.Model):
 
     def __repr__(self):
         return 'Message to ' + self.recipient + ': ' + self.message[:10]
+
+class Broadcast(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    message = db.Column(db.Text())
+
+    def __repr__(self):
+        return self.message

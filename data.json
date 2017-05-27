@@ -1,0 +1,26 @@
+[
+  {
+    "message": "Hello world!", 
+    "recipient": "John"
+  }, 
+  {
+    "message": "Another lorem ipsum", 
+    "recipient": "Smith"
+  }, 
+  {
+    "message": "asdf", 
+    "recipient": "Tester"
+  }, 
+  {
+    "message": "It works :D", 
+    "recipient": "Anna"
+  }, 
+  {
+    "message": "was fat", 
+    "recipient": "your@gmail.com"
+  }, 
+  {
+    "message": "Test", 
+    "recipient": "verkhovskaya.anna@gmail.com"
+  }
+]

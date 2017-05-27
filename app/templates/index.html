@@ -1,18 +1,18 @@
 {% extends "base.html" %}
 {% block content %}
     <div class="jumbotron">
-        <h1>Hello, world!</h1>
-        <p>...</p>
-        <p><a class="btn btn-primary btn-lg" href="{{ url_for('download') }}" role="button">Download</a></p>
+        <h1>Latest Broadcast</h1>
+        {% if broadcasts %}
+            <h3>{{ broadcasts[0].message }}</h3>
+        {% else %}
+            <h3>No broadcasts have been released yet.</h3>
+        {% endif %}
     </div>
 
     <div class="page-header">
-        <h1>Broadcasts</h1>
+        <h1>SkyHook is Active</h1>
     </div>
-    {% for post in messages %}
-    <div class="alert alert-info" role="alert">
-        {{ post.message }}
-    </div>
-    {% endfor %}
-    <a href="{{ url_for('download') }}">Download</a>
+    <p class="lead">SkyHook provides a platform for communication in emergency situations. You can use this website to send emails to people in the outside world, and to receive important information from rescue officials.</p>
+    <p class="lead">To help others in your area gain access to SkyHook, download and install the application below.</p>
+    <a href="{{ url_for('download') }}" class="btn btn-success btn-lg">Download</a>
 {% endblock %}

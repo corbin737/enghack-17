@@ -7,10 +7,12 @@ from .forms import MessageForm
 def dashboard():
     user = {'nickname': 'Miguel'}  # fake user
     messages = models.Message.query.all()
+    broadcasts = models.Broadcast.query.all()
     return render_template("index.html",
                            title='Home',
                            user=user,
-                           messages=messages)
+                           messages=messages,
+                           broadcasts=broadcasts)
 
 @app.route('/messages', methods=['GET', 'POST'])
 def messages():

@@ -1,31 +1,6 @@
 {% extends "base.html" %}
 {% block content %}
     <div class="page-header">
-        <h1>Sent Messages</h1>
-    </div>
-    {% if messages %}
-        {% for message in messages %}
-        <div class="panel panel-default">
-            <div class="panel-heading">
-                <strong>To: {{ message.recipient }}</strong>
-            </div>
-            <div class="panel-body">
-                {{ message.message }}
-            </div>
-            <div class="panel-footer">
-                {% if message.delivered %}
-                    Message delivered!
-                {% else %}
-                    Pending delivery...
-                {% endif %}
-            </div>
-        </div>
-        {% endfor %}
-    {% else %}
-        <p>You haven't sent any messages.</p>
-    {% endif %}
-
-    <div class="page-header">
         <h1>New Message</h1>
     </div>
     <form action="" method="post" name="login">
@@ -44,6 +19,26 @@
                 <span class="help-block" style="color: red;">{{ error }}</span>
             {% endfor %}
         </div>
-        <button type="submit" class="btn btn-primary pull-right">Send</button>
+        <button type="submit" class="btn btn-success pull-right">Send</button>
     </form>
+
+    <div class="page-header">
+        <h1>Sent Messages</h1>
+    </div>
+    {% if messages %}
+        {% for message in messages %}
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <strong>To: {{ message.recipient }}</strong>
+            </div>
+            <div class="panel-body">
+                {{ message.message }}
+            </div>
+        </div>
+        {% endfor %}
+    {% else %}
+        <p>You haven't sent any messages.</p>
+    {% endif %}
+
+
 {% endblock %}

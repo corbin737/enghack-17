@@ -1,5 +1,6 @@
-from flask import render_template
+from flask import render_template, flash, redirect
 from app import app
+from .forms import MessageForm
 
 @app.route('/')
 @app.route('/index')
@@ -19,3 +20,13 @@ def index():
                            title='Home',
                            user=user,
                            posts=posts)
+
+@app.route('/messages', methods=['GET', 'POST'])
+def messages():
+    form = MessageForm()
+    if form.validate_on_submit():
+        flash('Message sent to' + str(form.recipient.data))
+        return redirect('/index')
+    return render_template('message.html',
+                            title='Send Message',
+                            form=form)

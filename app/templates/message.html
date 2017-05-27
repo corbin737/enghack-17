@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% block content %}
+    <h1>Write a Message</h1>
+    <form action="" method="post" name="login">
+        {{ form.hidden_tag() }}
+        <p>
+            To:<br>
+            {{ form.recipient(size=80) }}<br>
+            {% for error in form.recipient.errors %}
+                <span style="color: red;">[{{ error }}]</span>
+            {% endfor %}<br>
+        </p>
+        <p>
+            Enter your message:<br>
+            {{ form.message(rows=10, cols=80) }}<br>
+            {% for error in form.message.errors %}
+                <span style="color: red;">[{{ error }}]</span>
+            {% endfor %}<br>
+        </p>
+        <p><input type="submit" value="Send"></p>
+    </form>
+{% endblock %}

@@ -11,7 +11,7 @@ if __name__=="__main__":
                 scheme.save()
                 scheme.activate()
                 domain = i.replace("goto_", "")
-                r = requests.get("http://" + domain)
+                r = requests.get("http://" + domain + "/get_data")
                 file = open("Message" + str(count))
                 file.write(r.text)
                 file.close()

@@ -42,6 +42,11 @@ def get_data():
 def post_data():
     res = request.data
     data = json.loads(res)
+    m = models.Broadcast(
+        message=data.content[0].message
+    )
+    db.session.add(m)
+    db.session.commit()
     return redirect('/')
 
 @app.route('/download')
